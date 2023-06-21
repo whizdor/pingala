@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+
+  "name": "Daily Schedule",
+  "version": "0.1.0",
+  "author": "Kushagra Srivastava",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["app.js"]
+    }
+  ],
+
+  "permissions": [
+    "activeTab", "notifications",
+    "storage",
+    "alarms"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon2.jpg"
+    },
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}
